@@ -352,7 +352,7 @@ RegEx = #[a-zA-Z0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/ ]* ⇒ ⇒ After # all print
 ## Lexer
 The lexer is separated into different classes in order to make it more readable and easier to scale. The Lexer class implements the most important functions; `getChar()` and `make_tokens()` among other helpful functions. `getChar` function gets the next character from the input stream and places it into the current_char class variable. Then, depending on the current char, the appropriate function that takes care of constructing the token is called. The next important class is the Position class which takes care of keeping track of the current line and current column. Generally, the lexer reads character by character and constructs a token based on the current stream of characters. Once the token is constructed, it is appended to an array of tokens that stores all the tokens from the input stream.
 
-[lexer.png](https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/lexer.jpg)
+![Lexer Example](https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/lexer.jpg)
 
 ## Parser and Static Semantics
 
