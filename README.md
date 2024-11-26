@@ -298,15 +298,15 @@ The assembler executable outputs a file named ***source.nml*** that contains the
 
 ### Simple problem:
 
-![simple](https://user-images.githubusercontent.com/54045588/112025849-e36c8680-8b35-11eb-91e7-d4e6d834c9c8.png)
+<img width="512" alt="1" src="https://user-images.githubusercontent.com/54045588/112025849-e36c8680-8b35-11eb-91e7-d4e6d834c9c8.png">
 
 ### Medium problem:
 
-![medium](https://user-images.githubusercontent.com/54045588/112025971-0a2abd00-8b36-11eb-8451-37e89cbb6be4.png)
+<img width="512" alt="2" src="https://user-images.githubusercontent.com/54045588/112025971-0a2abd00-8b36-11eb-8451-37e89cbb6be4.png">
 
 ### Complex problem:
 
-![complex](https://user-images.githubusercontent.com/54045588/112026020-144cbb80-8b36-11eb-9d53-491260e3a85f.png)
+<img width="512" alt="2" src="https://user-images.githubusercontent.com/54045588/112026020-144cbb80-8b36-11eb-9d53-491260e3a85f.png">
 
 ## Language Design
 
