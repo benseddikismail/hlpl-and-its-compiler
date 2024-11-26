@@ -306,7 +306,7 @@ The assembler executable outputs a file named ***source.nml*** that contains the
 
 ### Complex problem:
 
-<img width="512" alt="2" src="https://user-images.githubusercontent.com/54045588/112026020-144cbb80-8b36-11eb-9d53-491260e3a85f.png">
+<img width="512" alt="3" src="https://user-images.githubusercontent.com/54045588/112026020-144cbb80-8b36-11eb-9d53-491260e3a85f.png">
 
 ## Language Design
 
@@ -352,7 +352,7 @@ RegEx = #[a-zA-Z0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/ ]* ⇒ ⇒ After # all print
 ## Lexer
 The lexer is separated into different classes in order to make it more readable and easier to scale. The Lexer class implements the most important functions; `getChar()` and `make_tokens()` among other helpful functions. `getChar` function gets the next character from the input stream and places it into the current_char class variable. Then, depending on the current char, the appropriate function that takes care of constructing the token is called. The next important class is the Position class which takes care of keeping track of the current line and current column. Generally, the lexer reads character by character and constructs a token based on the current stream of characters. Once the token is constructed, it is appended to an array of tokens that stores all the tokens from the input stream.
 
-![Lexer Example](https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/lexer.jpg)
+<img width="512" alt="lexer" src="https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/lexer.jpg">
 
 ## Parser and Static Semantics
 
@@ -388,7 +388,7 @@ After the lexer outputs tokens (to tokens.txt) along with the actual source valu
 It also registers declared variables into the symbol table (symbol_table.txt) so to evaluate static semantics. The symbol table records and identifier’s name, type, and value (in case it is assigned to a value).  
 For static semantics evaluation, the symbol table would be used to make sure that any identifier used through the program is defined and would also be used for type checking.
 
-![Correct Syntax Example](https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/syntax.jpg)
+<img width="512" alt="syntax" src="https://github.com/benseddikismail/hlpl-and-its-compiler/blob/main/img/syntax.jpg">
 
 ### Static Scoping
 Static scoping, or lexical scoping is implemented in the following way: each time a function or nameless block is defined, we keep track of its environment, meaning whether that block was declared inside another block (such as a function). Each function will keep track of a “parent” which will be the block it is defined within. Once a reference to a variable is made inside a block, we search within the activation record of that block, if the variable is not found, we jump to the activation record of the parent block (which we are keeping track of) and search there. This recursive process is carried on until the variable is found, or an error occurs. Therefore, each time a block is declared in our program, an activation record is created for it, including its local variables, as well as a reference to its parent block. Identifying a parent block in our case can be done by setting every function within a block’s curly brackets as children to that block. Once done, the variable lookup is an easy task, we only need to recursively visit parents until we find the variable or until no parent is left (in which case we raise an error). In the AL code, once a reference is made to a local variable, it is used normally, however, once there is a non-local reference we visit the parents based on their references from each block.
